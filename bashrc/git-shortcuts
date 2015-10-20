@@ -1,8 +1,9 @@
+alias gl='git log --decorate'
 alias gb='git branch'
+alias gd='git diff'
 alias gs='git status'
 alias ga='git add'
-alias gbn="git branch | awk '/\*/ {print $2}'"
-alias gpb="git push origin (gbn)"
-alias gpull="git pull origin (gbn)"
-alias gco='git commit'
+alias gbn="git branch | grep \* | cut -d' ' -f2"
+alias gpb='git push origin $(gbn)'
+alias gpull='git pull origin $(gbn) --rebase'
 alias gf='git fetch'
